@@ -21,27 +21,27 @@ spring:
       - id: security
         uri: http://app-security:80
         predicates:
-          - Path=/aforo55/security
+          - Path=/aforo55/security/**
         filters:
           - StripPrefix=1
       - id: pay
         uri: http://app-pay:82
         predicates:
-          - Path=/aforo55/pay
+          - Path=/aforo55/pay/**
         filters:
           - StripPrefix=1
           - JwtAuthenticationFilter
       - id: transaction
         uri: http://app-transaction:83
         predicates:
-          - Path=/aforo55/transaction
+          - Path=/aforo55/transaction/**
         filters:
           - StripPrefix=1
           - JwtAuthenticationFilter
       - id: invoice
         uri: http://app-invoices:84
         predicates:
-          - Path=/aforo55/invoice
+          - Path=/aforo55/invoice/**
         filters:
           - StripPrefix=1
           - JwtAuthenticationFilter
